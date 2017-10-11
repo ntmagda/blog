@@ -1,0 +1,18 @@
+{% extends 'main/index.html' %}
+{% block content %}
+        <section class="content">
+			<div class = "main_wrapper">
+			<article>
+				<div class="post">
+					<h1 class="title">
+						<a href="#">{{ object.title }}</a>
+					</h1>
+					<p class ="meta"> {{object.created}}</p>
+					{{object.body }}
+				</div>
+			</article>
+			</div>
+        </section>
+
+{% endblock %}
+

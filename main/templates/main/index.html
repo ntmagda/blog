@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+{% load django_markdown %}
+<html lang="en">
+<head>
+	<title>Mama nie wie, że się wspinam</title>
+	<meta charset="utf-8">
+	<meta name="author" content="ntmagda">
+    <link rel="stylesheet" type="text/css" href="{% static '/main/css/style.css' %}">
+</head>
+<body>
+    <div id="website">
+    <div id="header">
+        <div id = "blog-title">
+            Mama nie wie, że sie wspinam
+        </div>
+    </div>
+
+        <div id="main-menu">
+                    <ul>
+                        <li class = "menu-item"><a href="{% url 'main:home' 		%}">Home</a></li>
+                        <li class = "menu-item"><a href="{% url 'main:aboutus' 		%}">About us</a></li>
+                        <li class = "menu-item"><a href="{% url 'main:expeditions' 	%}">Expeditions</a></li>
+                        <li class = "menu-item"><a href="{% url 'main:contact' 		%}">Contact</a></li>
+                        <li class = "menu-item"><a href="{% url 'main:contact' 		%}">Contact</a></li>
+                        <li class = "menu-item"><a href="{% url 'main:contact' 		%}">Contact</a></li>
+                        <li class = "menu-item"><a href="{% url 'main:contact' 		%}">Contact</a></li>
+                    </ul>
+        </div>
+        <div id="wrapper">
+            <div id="content">
+                <--! Main column -->
+            {% block content %}
+            {% endblock %}
+        </div>
+            <div id="side-bar">
+            <ul id="pages">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Archives</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+	        <h3>Categories</h3>
+            <ul id="categories">
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Articles</a></li>
+            </ul>
+
+	        <h3>Search</h3>
+            <form method="get" id="search" action="#">
+                <fieldset>
+                    <input type="text" class="searchbar" />
+                    <input type="button" class="searchbutton" value="Search" />
+                </fieldset>
+            </form>
+
+	        <h3>About</h3>
+        </div>
+        </div>
+    <div id="cleared"></div>
+    </div>
+
+</div>
+</body>
+</html>

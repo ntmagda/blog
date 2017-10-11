@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+{% extends 'main/index.html' %}
+{% load django_markdown %}
+{% load staticfiles %}
+{% block content %}
+
+{% for object in object_list %}
+    <div class="post">
+        <h1><a href="{% url 'main:entry-detail' object.slug %}">{{ object.title }}</a></h1>
+
+        <a href="{% url 'main:entry-detail' object.slug %}" class="post-thumbnail">
+            <img src="{{ object.title_image.url }}" alt="Read the full post" />
+        </a>
+        <div id="short_body">
+            {{object.body|markdown|truncatewords:50 }}
+        </div>
+
+        <div class="post-info">
+            <ul>
+                <li class="date">{{ object.created }}</li>
+                <li class="read-more"><a href="{% url 'main:entry-detail' object.slug %}">Read more</a></li>
+            </ul>
+        </div>
+
+    </div>
+{% endfor %}
+{% endblock %}
