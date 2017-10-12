@@ -1,0 +1,8 @@
+{% extends 'main/index.html' %}
+{% load django_markdown %}
+{% load staticfiles %}
+{% block content %}
+
+    <link rel="stylesheet" type="text/css" href="{% static '/main/css/body.css' %}">
+        <img class="svg" src="{% static '/images/map/map1.svg' %}">
+{% endblock %}

@@ -5,24 +5,36 @@
 {% load staticfiles %}
 {% block content %}
 
-{% for object in object_list %}
-    <div class="post">
-        <h1><a href="{% url 'main:entry-detail' object.slug %}">{{ object.title }}</a></h1>
+    <link rel="stylesheet" type="text/css" href="{% static '/main/css/post_list.css' %}">
+    <div id="main">
+        <div id="content">
+            {% for object in object_list %}
+                <div class="post">
+                    <div class="title">
+                        <a href="{% url 'main:entry-detail' object.slug %}">{{ object.title|safe }}</a>
+                    </div>
+                    <div class ="info">
+                        <span class="date">{{ object.created }}</span>
+                        <span class = "author">
+                            by <a href = "{% url 'main:aboutus' %}">{{ object.author|safe }}</a>
+                        </span>
+                    </div>
+                    <div class = "image">
+                        <a href="{% url 'main:entry-detail' object.slug %}" class="thumbnail">
+                            <img class = "post-image" src="{{ object.title_image.url }}"/>
+                        </a>
+                    </div>
 
-        <a href="{% url 'main:entry-detail' object.slug %}" class="post-thumbnail">
-            <img src="{{ object.title_image.url }}" alt="Read the full post" />
-        </a>
-        <div id="short_body">
-            {{object.body|markdown|truncatewords:50 }}
+                    <div class="short-body">
+                        {{object.body|markdown|truncatewords:50 }}
+                    </div>
+                    <div class="read-more"><a href="{% url 'main:entry-detail' object.slug %}">Read more</a></div>
+
+
+                </div>
+            {% endfor %}
         </div>
-
-        <div class="post-info">
-            <ul>
-                <li class="date">{{ object.created }}</li>
-                <li class="read-more"><a href="{% url 'main:entry-detail' object.slug %}">Read more</a></li>
-            </ul>
-        </div>
-
+        {% include 'main/sidebar.html' %}
     </div>
-{% endfor %}
+
 {% endblock %}

@@ -12,6 +12,8 @@ class EntryQuerySet(models.QuerySet):
 
 class Entry(models.Model):
     title = models.CharField(max_length=400)
+    author = models.CharField(max_length=400)
+    author_img = models.ImageField(upload_to='author/', null=True)
     body = models.TextField()
     slug = models.SlugField(max_length=200, unique=True)
     publish = models.BooleanField(default=True)

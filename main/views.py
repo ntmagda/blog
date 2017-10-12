@@ -4,7 +4,7 @@ from entry import models
 
 
 class Index(generic.TemplateView):
-    template_name = "main/index.html"
+    template_name = "main/main_index.html"
 
 class AboutUs(generic.TemplateView):
     template_name = "main/aboutus.html"
