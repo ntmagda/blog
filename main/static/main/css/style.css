@@ -1,4 +1,10 @@
 
+@font-face {
+    font-family: myfont;
+    src: url('../../fonts/ADAM.CG PRO.otf') format("opentype");
+    src: local('../../fonts/ADAM.CG PRO.otf');
+}
+
 /*GENERAL STYLING*/
 body {
     /*background-color: #39ff3a;*/
@@ -55,7 +61,7 @@ body {
 #main {
     display: flex;
     /*flex-direction: row;*/
-    width: 80%;
+    width: 70%;
     flex-flow: row;
     /*flex-grow: 0;*/
     /*flex-shrink: 0;*/
@@ -66,15 +72,20 @@ body {
 
 #content {
     order: 1;
-    background-color: #e5e1e1;
     flex:1;
+    background-color: #e5e1e1;
+    background: -webkit-linear-gradient(left, #e5e1e1, #b4aaad); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #e5e1e1, #b4aaad); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #e5e1e1, #b4aaad); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #e5e1e1 , #b4aaad); /* Standard syntax */
+
 
 }
 
 
 #side-bar {
     order: 2;
-    background-color: orange;
+    background-color: #b4aaad;
     width:250px;
     /*flex: 0 100%;*/
     /*flex-grow: 0;*/

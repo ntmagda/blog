@@ -14,7 +14,7 @@
                         <a href="{% url 'main:entry-detail' object.slug %}">{{ object.title|safe }}</a>
                     </div>
                     <div class ="info">
-                        <span class="date">{{ object.created }}</span>
+                        <span class="date">created on {{ object.created|date:'d.m.Y'}}</span>
                         <span class = "author">
                             by <a href = "{% url 'main:aboutus' %}">{{ object.author|safe }}</a>
                         </span>

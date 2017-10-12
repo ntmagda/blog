@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-    {% block sidebar %}
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static '/main/css/side_bar.css' %}">
         <div id="side-bar">
-            <ul id="pages">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Archives</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-
-            <h3>Categories</h3>
-            <ul id="categories">
-                <li><a href="#">Movies</a></li>
-                <li><a href="#">Reviews</a></li>
-                <li><a href="#">Articles</a></li>
-            </ul>
-
+            <div class="tags">
+                <h3 class="headline">Places</h3>
+                <ul >
+                    <li><a href="#">Africa</a></li>
+                    <li><a href="#">Asia</a></li>
+                    <li><a href="#">Europe</a></li>
+                    <li><a href="#">South America</a></li>
+                </ul>
+                <h3 class="headline">Categories</h3>
+                <ul >
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">Tips</a></li>
+                    <li><a href="#">Articles</a></li>
+                </ul>
+            </div>
             <h3>Search</h3>
             <form method="get" id="search" action="#">
                 <fieldset>
@@ -22,7 +24,4 @@
                     <input type="button" class="searchbutton" value="Search" />
                 </fieldset>
             </form>
-
-            <h3>About</h3>
         </div>
-{% endblock %}
