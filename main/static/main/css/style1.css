@@ -1,0 +1,108 @@
+
+/*GENERAL STYLING*/
+body {
+    background-color: #39ff3a;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+
+#website {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /*box-sizing: border-box;*/
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+
+#header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#main-menu{
+    order: 1;
+    flex: 1 100%;
+    background-color: aliceblue;
+    text-align: center;
+
+}
+
+#blog-title{
+    order: 2;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 200px;
+    background-color: #ff3af3;
+
+}
+
+#main {
+    display: flex;
+    /*flex-direction: row;*/
+    width: 80%;
+    flex-flow: row;
+    /*flex-grow: 0;*/
+    /*flex-shrink: 0;*/
+    /*flex-basis: 1000px;*/
+
+}
+
+
+#content {
+    order: 1;
+    background-color: yellow;
+    flex:1;
+
+}
+
+
+#side-bar {
+    order: 2;
+    background-color: orange;
+    width:200px;
+    /*flex: 0 100%;*/
+    /*flex-grow: 0;*/
+    /*flex-shrink: 0;*/
+    /*flex-basis: 30%;*/
+}
+
+
+
+/* MAIN MENU */
+
+#main-menu {
+    color: aliceblue;
+    background-color: #222222;
+}
+
+#main-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+#main-menu li a {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 13px;
+    float: left;
+    color: #eeeeee;
+    text-decoration: none;
+    /*fade effect*/
+    background-color: #222222;
+    transition: background-color .1s ease-in-out;
+    -moz-transition: background-color .1s ease-in-out;
+    -webkit-transition: background-color .1s ease-in-out;
+}
