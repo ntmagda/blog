@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="short-body">
-                        {{object.body|markdown|truncatewords:50 }}
+                        {{object.short_body|markdown|truncatewords:50 }}
                     </div>
                     <div class="read-more"><a href="{% url 'main:entry-detail' object.slug %}">Read more</a></div>
 

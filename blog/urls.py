@@ -24,6 +24,8 @@ urlpatterns = [
     url(r'^$', views.Index.as_view()),
     url(r'^home/', include('main.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    url(r'^test/', include('effect_test.urls')),
 ]
 
 

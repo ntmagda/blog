@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_markdown',
+    'taggit',
+    'ckeditor',
+    'ckeditor_uploader',
+    'effect_test.apps.EffectTestConfig',
     'main.apps.MainConfig',
     'entry.apps.EntryConfig'
 ]
@@ -126,8 +130,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-
 STATIC_URL = '/home/static/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+CKEDITOR_UPLOAD_PATH = 'ckeditor/%Y/%m/%d'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'home/media')
+print(MEDIA_ROOT)
 MEDIA_URL = '/home/media/'
 

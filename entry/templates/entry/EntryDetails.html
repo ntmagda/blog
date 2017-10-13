@@ -1,18 +1,32 @@
 {% extends 'main/index.html' %}
 {% block content %}
+{% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static '/main/css/post_list.css' %}">
+    <div id="main">
+        <div id="content">
         <section class="content">
-			<div class = "main_wrapper">
+			<div class = "post_wrapper">
 			<article>
-				<div class="post">
-					<h1 class="title">
-						<a href="#">{{ object.title }}</a>
-					</h1>
-					<p class ="meta"> {{object.created}}</p>
-					{{object.body }}
+				<div class="post-item">
+					<div class="title">
+                        <a href="{% url 'main:entry-detail' object.slug %}">{{ object.title|safe }}</a>
+					</div>
+					<div class ="info">
+                        <span class="date">created on {{ object.created|date:'d.m.Y'}}</span>
+                        <span class = "author">
+                            by <a href = "{% url 'main:aboutus' %}">{{ object.author|safe }}</a>
+                        </span>
+                    </div>
+                    <div>
+					{{object.body|safe}}
+                    </div>
 				</div>
 			</article>
 			</div>
         </section>
-
+        </div>
+        {% include 'main/sidebar.html' %}
+    </div>
 {% endblock %}
+
 

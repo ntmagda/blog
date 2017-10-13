@@ -19,7 +19,7 @@ body {
 
 #website {
     height: 100%;
-    overflow: hidden;
+    /*overflow: hidden; <- affects sliding effect*/
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -40,12 +40,13 @@ body {
     overflow: hidden;
     position: fixed;
     top: 0;
+    /*left: 50%;*/
     width: 100%;
+    /*margin-left: -37.5%;*/
     order: 1;
     flex: 1 100%;
-    background-color: aliceblue;
+    /*background-color: aliceblue;*/
     text-align: center;
-
 }
 
 #blog-title{
@@ -79,7 +80,41 @@ body {
     background: -moz-linear-gradient(right, #e5e1e1, #b4aaad); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to right, #e5e1e1 , #b4aaad); /* Standard syntax */
 
+}
+.know_more{
+	border: solid;
+    border-color: white;
+	font-family: inherit;
+	font-size: inherit;
+	color: white;
+	background: none;
+	cursor: pointer;
+	padding: 20px 60px;
+	display: inline-block;
+	margin: 10px 35px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
 
+.know_more:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.know_more:hover,
+.know_more:active{
+    color: #0e83cd;
+	background: #fff;
 }
 
 
@@ -98,27 +133,32 @@ body {
 /* MAIN MENU */
 
 #main-menu {
-    color: aliceblue;
-    background-color: #222222;
+    /*color: aliceblue;*/
+    /*background-color: #222222;*/
 }
 
 #main-menu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    align-items: center;
+    /*align-items: center;*/
 }
 
 #main-menu li a {
+    font-family: inherit;
+	font-size: inherit;
+    /*font-size:20px;*/
+    /*text-transform: uppercase;*/
     display: inline;
     list-style-type: none;
     margin: 0;
     padding: 10px 13px;
     float: left;
-    color: #eeeeee;
+    color:black;
+    font-weight: bold;
     text-decoration: none;
     /*fade effect*/
-    background-color: #222222;
+    /*background-color: #222222;*/
     transition: background-color .1s ease-in-out;
     -moz-transition: background-color .1s ease-in-out;
     -webkit-transition: background-color .1s ease-in-out;

@@ -2,7 +2,33 @@
 {% load django_markdown %}
 {% load staticfiles %}
 {% block content %}
-
     <link rel="stylesheet" type="text/css" href="{% static '/main/css/body.css' %}">
-        <img class="svg" src="{% static '/images/map/map1.svg' %}">
+<script>
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        window.location.hash = hash;
+      });
+    }
+  });
+});
+</script>
+       <section id="section_top" class="main1">
+            <div class = "content1">
+                <img class="svg" src="{% static '/images/map/map1.svg' %}">
+                <div id="know_more">
+                    <a href="#next_section" class ="know_more" >Get to know us</a>
+                </div>
+            </div>
+    </section>
+    <section id ="section_bottom" class="main1">
+        <div id = "next_section" class = "item">
+{#            <img class="svg" src="{% static '/images/map/map1.svg' %}">#}
+        </div>
+    </section>
 {% endblock %}

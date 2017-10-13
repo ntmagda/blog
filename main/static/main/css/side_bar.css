@@ -1,6 +1,10 @@
 
 #side-bar{
     padding-top: 50px;
+    padding-left: 30px;
+    border-left: solid;
+    border-color: #7d7d7d;
+    border-width: 3px;
 }
 
 ul{
