@@ -3,7 +3,8 @@ from django.utils import timezone
 from entry import models
 
 
-class Index(generic.TemplateView):
+class Index(generic.ListView):
+    queryset = models.Entry.objects.published()
     template_name = "main/main_index.html"
 
 class AboutUs(generic.TemplateView):
@@ -15,3 +16,5 @@ class ContactView(generic.TemplateView):
 class ExpeditionsView(generic.ListView):
     queryset = models.Entry.objects.published()
     template_name = "main/expeditions.html"
+
+

@@ -1,6 +1,7 @@
-{% extends 'main/index.html' %}
+{% extends 'main/base.html' %}
 {% block content %}
 {% load staticfiles %}
+    {% include 'main/main_menu.html'%}
     <link rel="stylesheet" type="text/css" href="{% static '/main/css/post_list.css' %}">
     <div id="main">
         <div id="content">

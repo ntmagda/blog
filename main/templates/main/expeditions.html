@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-{% extends 'main/index.html' %}
+{% extends 'main/base.html' %}
 {% load django_markdown %}
 {% load staticfiles %}
 {% block content %}
-
+{% include 'main/main_menu.html'%}
     <link rel="stylesheet" type="text/css" href="{% static '/main/css/post_list.css' %}">
     <div id="main">
         <div id="content">
