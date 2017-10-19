@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load django_markdown %}
+<html lang="en">
+<head>
+	<title>Mama nie wie, że się wspinam</title>
+	<meta charset="utf-8">
+	<meta name="author" content="ntmagda">
+    <link rel="stylesheet" type="text/css" href="{% static '/main/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/main/css/main_menu.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+{#<div id="website">#}
+    {% block content %}
+    {% endblock %}
+{#</div>#}
+</body>
+</html>

@@ -29,12 +29,10 @@
                         {{object.short_body|markdown|truncatewords:50 }}
                     </div>
                     <div class="read-more"><a href="{% url 'main:entry-detail' object.slug %}">Read more</a></div>
-
-
                 </div>
             {% endfor %}
         </div>
-        {% include 'main/sidebar.html' %}
+{#        {% include 'main/sidebar.html' %}#}
     </div>
 
 {% endblock %}

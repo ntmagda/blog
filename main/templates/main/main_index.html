@@ -2,8 +2,8 @@
 {% load django_markdown %}
 {% load staticfiles %}
 {% block content %}
-    <link rel="stylesheet" type="text/css" href="{% static '/main/css/body.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static '/main/css/row_images.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/main/css/main_sections.css' %}">
+{#    <link rel="stylesheet" type="text/css" href="{% static '/main/css/row_images.css' %}">#}
 <script>
 $(document).ready(function(){
   $("a").on('click', function(event) {
@@ -21,25 +21,16 @@ $(document).ready(function(){
 </script>
     {% include 'main/main_menu.html'%}
        <section id="section_top" class="main1">
-            <div class = "content1">
-                {% include 'main/map1.svg' %}
+{#                {% include 'main/map1.svg' %}#}
 {#                <img class="svg" src="{% static '/images/map/map1.svg' %}">#}
+                <div class="section_top_content"><h1>We are in India</h1></div>
                 <div id="know_more">
-                    <a href="#section_bottom" class ="know_more" >Get to know us</a>
+                    <a href="#section_bottom" class ="know_more" >Find out more</a>
                 </div>
-            </div>
     </section>
     <section id ="section_bottom" class="main1">
         <div id = "next_section" class = "item">
-            <div id="recent-adventures">
-                {% for object in object_list|slice:":3" %}
-                <div class="post">
-                <a href="{% url 'main:entry-detail' object.slug %}" class="thumbnail">
-                    <div class = "image" style="background-image:url({{ object.title_image.url }})"></div>
-                </a>
-                </div>
-                {% endfor %}
-            </div>
+            {% include 'main/slideshow.html' %}
         </div>
     </section>
 {% endblock %}

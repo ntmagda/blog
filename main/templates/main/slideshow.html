@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+{% load django_markdown %}
+{% load staticfiles %}
+{% block content %}
+
+    <script src = "{% static '/main/js/slideshow.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static '/main/css/slideshow.css' %}">
+    <div id="main">
+        <div id="slideshow-container" >
+            {% for object in object_list %}
+                 <div class="mySlides fade" >
+                     <a href="{% url 'main:entry-detail' object.slug %}" class="thumbnail">
+                            <img src="{{ object.title_image.url }}" style="width:100%"/>
+                     </a>
+                <div class="text">{{object.short_body|markdown|truncatewords:10 }}</div>
+                </div>
+            {% endfor %}
+            <div class="prev"><a onclick="plusSlides(-1)">&#10094;</a></div>
+            <div class="next"><a onclick="plusSlides(1)">&#10095;</a></div>
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

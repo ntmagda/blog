@@ -1,9 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
 
 @font-face {
     font-family: myfont;
     src: url('../../fonts/ADAM.CG PRO.otf') format("opentype");
     src: local('../../fonts/ADAM.CG PRO.otf');
 }
+
 
 /*GENERAL STYLING*/
 body {
@@ -20,6 +28,7 @@ body {
 
 #website {
     height: 100%;
+    width: 60%;
     /*overflow: hidden; <- affects sliding effect*/
     margin: 0;
     display: flex;
@@ -32,41 +41,17 @@ body {
 
 
 
-#header {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    /*text-align: center;*/
-    justify-content: center;
-    align-items: center;
-}
 
-#main-menu{
-    overflow: hidden;
-    position: fixed;
-    display: flex;
-    top: 0;
-    /*left: 50%;*/
-    width: 100%;
-    height: 10%;
-    /*margin-left: -37.5%;*/
-    order: 1;
-    flex: 1 100%;
-    /*background-color: white;*/
-    /*opacity: 20;*/
-    justify-content: center;
-    align-items: center;
-}
 
-#blog-title{
-    padding-top: 70px;
-    order: 2;
-    flex-grow: 0;
-    flex-shrink: 0;
-    height: 150px;
-    /*background-color: #ff3af3;*/
+/*#blog-title{*/
+    /*padding-top: 70px;*/
+    /*order: 2;*/
+    /*flex-grow: 0;*/
+    /*flex-shrink: 0;*/
+    /*height: 150px;*/
+    /*!*background-color: #ff3af3;*!*/
 
-}
+/*}*/
 
 #main {
     display: flex;
@@ -79,51 +64,16 @@ body {
 }
 
 
-#content {
-    order: 1;
-    flex:1;
-    background-color: #e5e1e1;
-    background: -webkit-linear-gradient(left, #e5e1e1, #b4aaad); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, #e5e1e1, #b4aaad); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, #e5e1e1, #b4aaad); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, #e5e1e1 , #b4aaad); /* Standard syntax */
+/*#content {*/
+    /*order: 1;*/
+    /*flex:1;*/
+    /*background-color: #e5e1e1;*/
+    /*background: -webkit-linear-gradient(left, #e5e1e1, #b4aaad); !* For Safari 5.1 to 6.0 *!*/
+    /*background: -o-linear-gradient(right, #e5e1e1, #b4aaad); !* For Opera 11.1 to 12.0 *!*/
+    /*background: -moz-linear-gradient(right, #e5e1e1, #b4aaad); !* For Firefox 3.6 to 15 *!*/
+    /*background: linear-gradient(to right, #e5e1e1 , #b4aaad); !* Standard syntax *!*/
 
-}
-.know_more{
-	border: solid;
-    border-color: white;
-	font-family: inherit;
-	font-size: inherit;
-	color: white;
-	background: none;
-	cursor: pointer;
-	padding: 1% 4%;
-	display: inline-block;
-	margin: 2% 7%;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 700;
-	outline: none;
-	position: relative;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.know_more:after {
-	content: '';
-	position: absolute;
-	z-index: -1;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.know_more:hover,
-.know_more:active{
-    color: #0e83cd;
-	background: #fff;
-}
+/*}*/
 
 
 #side-bar {
@@ -137,51 +87,4 @@ body {
 }
 
 
-
-/* MAIN MENU */
-
-
-#main-menu ul {
-    display: inline-block;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    /*align-items: center;*/
-}
-#main-menu li{
-    margin: 0 10px;
-    float: left;
-    padding-top: 10%;
-    padding-bottom: 10%;
-}
-
-#main-menu li a {
-    font-family: myfont;
-	font-size: 17px;
-    /*font-size:20px;*/
-    /*text-transform: uppercase;*/
-    /*display: inline;*/
-    list-style-type: none;
-    margin: 0;
-    padding: 10px 13px;
-    float: left;
-    color:black;
-    /*font-weight: bold;*/
-    text-decoration: none;
-    /*text-decoration: wavy;*/
-    /*text-transform: uppercase;*/
-
-
-}
-#main-menu a:hover,
-#main-menu a:active{
-    color: #0e83cd;
-	background: #fff;
-     /*transition: background-color .1s ease-in-out;*/
-    /*-moz-transition: background-color .1s ease-in-out;*/
-    /*-webkit-transition: background-color .1s ease-in-out;*/
-
-}
-
-
-svg { top:0; left:0; height:100%; width:100% }
+/*svg { top:0; left:0; height:100%; width:100% }*/
