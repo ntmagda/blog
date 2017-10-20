@@ -27,8 +27,8 @@
 .section_top_content h1{
     position: absolute;
     bottom: 0;
-    right: 30px;
-    /*left: 30px;*/
+    /*right: 30px;*/
+    left: 30px;
     /*font-family: 'Montserrat', sans-serif;*/
     font-family: "Arial Narrow";
     /*background-color: #ff3af3;*/
@@ -38,9 +38,10 @@
 
 }
 #section_bottom {
-    background-color: #fdfffe;
     margin: 0;
-    height: 100vh;
+    /*padding-top: 5%;*/
+    /*background-color: #fdfffe;*/
+    /*height: 100vh;*/
     /*width: 80%;*/
     padding-bottom: 0;
     background-size:cover;

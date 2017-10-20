@@ -1,10 +1,11 @@
 
-#side-bar{
+#sidebar{
+    flex-basis: 40%;
     padding-top: 50px;
     padding-left: 30px;
     border-left: solid;
-    border-color: #7d7d7d;
-    border-width: 3px;
+    border-color: #c7c7c7;
+    border-width: 1px;
 }
 
 ul{
@@ -12,9 +13,14 @@ ul{
 
 }
 
+li{
+    text-align: left;
+    margin-bottom: 10px;
+}
+
 .headline{
-    text-align: center;
-    font-family: myfont;
+    text-align: left;
+    font-family: 'Noticia Text', Georgia;
     text-transform: uppercase;
     font-size: 20px;
 }
@@ -22,7 +28,7 @@ ul{
 
 .tags {
     text-align: left;
-    font-family: myfont;
+    font-family: 'Noticia Text', Georgia;
     text-transform: uppercase;
     font-size: 15px;
     padding-bottom: 50px;

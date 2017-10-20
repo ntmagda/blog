@@ -23,3 +23,7 @@ class Entry(models.Model):
     body = RichTextUploadingField()
 
     objects = EntryQuerySet.as_manager()
+
+class EntryImage(models.Model):
+    property = models.ForeignKey(Entry, related_name='images')
+    image = models.ImageField(upload_to='images/%Y/%m/%d', null=True)

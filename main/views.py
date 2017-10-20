@@ -13,8 +13,5 @@ class AboutUs(generic.TemplateView):
 class ContactView(generic.TemplateView):
     template_name = "main/contact.html"
 
-class ExpeditionsView(generic.ListView):
-    queryset = models.Entry.objects.published()
-    template_name = "main/expeditions.html"
 
 
