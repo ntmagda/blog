@@ -4,7 +4,6 @@
 {% block content %}
     <link rel="stylesheet" type="text/css" href="{% static '/main/css/main_sections.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static '/entry/css/entry_list.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static '/entry/css/side_bar.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 
 <script>
@@ -27,7 +26,7 @@ $(document).ready(function(){
 {#                {% include 'main/map1.svg' %}#}
                 <div class="section_top_content" style="font-family: 'Amatic SC', cursive;">
                     <div>Polish-German <br> climbing team in: </div>
-                    <div id="current-destinationa" style="color:#1414e3">India</div>
+                    <div id="current-destinationa" >India</div>
                 </div>
                 <div id="know_more">
                     <a href="#section_bottom" class ="know_more" >Find out more</a>
@@ -53,7 +52,7 @@ $(document).ready(function(){
                     {% endwith %}
 				</div>
 			</article>
-             <div id ="sidebar">{% include 'entry/sidebar.html' %}</div>
+            {% include 'entry/sidebar.html' %}
             </div>
     </section>
 {% endblock %}

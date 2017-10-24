@@ -7,7 +7,7 @@ app_name = 'main'
 urlpatterns = [
     url(r'^contact/$', MainViews.ContactView.as_view(), name='contact'),
     url(r'^aboutus/$', MainViews.AboutUs.as_view(), name='aboutus'),
-    url(r'^entries/$', EntryView.EntryListView.as_view(), name='expeditions'),
-    url(r'^entries/(?P<slug>[-\w]+)/$', EntryView.EntryView.as_view(), name='entry-detail'),
+    url(r'^articles/$', EntryView.EntryListView.as_view(), name='articles'),
+    url(r'^articles/(?P<slug>[-\w]+)/$', EntryView.EntryView.as_view(), name='entry-detail'),
     url(r'^$', MainViews.Index.as_view(), name='home'),
 ]

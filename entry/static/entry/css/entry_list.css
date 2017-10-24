@@ -18,7 +18,7 @@
     flex-basis: 20%;
     /*background-color: #00A000;*/
 }
-.title a{
+.title {
     text-decoration: none;
     color: #000;
     font-family: 'Noticia Text', Georgia;
@@ -32,8 +32,39 @@
     text-transform: uppercase;
 }
 
+.title a {
+    text-decoration: none;
+
+}
+
 .title a:hover{
     text-decoration: none;
+}
+
+.post_wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+#similar_articles{
+    /*background-color: #815ba4;*/
+    border-top: solid;
+    border-color: #c7c7c7;
+    border-width: 1px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /*height: 500px;*/
+    /*justify-content: center;*/
+    /*width: 100%;*/
+}
+
+#similar_articles post-image{
+    flex: 0 0 30%;
+    margin: 5px;
+}
+#similar_articles img{
+
 }
 
 .post{

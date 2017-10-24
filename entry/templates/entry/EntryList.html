@@ -6,7 +6,6 @@
 {% block content %}
 {% include 'main/main_menu.html' %}
     <link rel="stylesheet" type="text/css" href="{% static '/entry/css/entry_list.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static '/entry/css/side_bar.css' %}">
         <div id="content">
             <div id="list">
             {% for object in object_list %}
@@ -33,6 +32,6 @@
                 </div>
             {% endfor %}
             </div>
-            <div id ="sidebar">{% include 'entry/sidebar.html' %}</div>
+            {% include 'entry/sidebar.html' %}
         </div>
 {% endblock %}

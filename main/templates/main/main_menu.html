@@ -1,10 +1,36 @@
+<script>
+    $(window).scroll(
+    {
+        previousTop: 0
+    },
+    function () {
+    var currentTop = $(window).scrollTop();
+    if (currentTop < this.previousTop) {
+        $('#upper-menu').show();
+    } else {
+        $('#upper-menu').hide();
+    }
+    this.previousTop = currentTop;
+});
+</script>
+
 <div id="header">
-    <div id="main-menu">
+{#    <div id="upper-menu" class="menu">#}
+{#        <ul>#}
+{#            <li class = "upper-menu-item">#}
+{#                <a target="_blank" title="find us on Facebook" href="https://www.facebook.com/magda.nowaktrzos">#}
+{#                    <img alt="follow me on facebook" src="//login.create.net/images/icons/user/facebook_30x30.png" border=0>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li class = "upper-menu-item"><a href="#">Twitter</a></li>#}
+{#        </ul>#}
+{#    </div>#}
+    <div id="main-menu" class="menu">
                 <ul>
                     <li class = "menu-item"><a href="{% url 'main:home' 		%}">Home</a></li>
                     <li class = "menu-item"><a href="{% url 'main:aboutus' 		%}">About us</a></li>
-                    <li class = "menu-item"><a href="{% url 'main:expeditions' 	%}">Expeditions</a></li>
-                    <li class = "menu-item"><a href="{% url 'main:contact' 		%}">Travels</a></li>
+                    <li class = "menu-item"><a href="{% url 'main:articles' 	%}">Articles</a></li>
+                    <li class = "menu-item"><a href="{% url 'main:contact'   	%}">Countries</a></li>
                     <li class = "menu-item"><a href="{% url 'main:contact' 		%}">Climbing</a></li>
                     <li class = "menu-item"><a href="{% url 'main:contact' 		%}">How to live?</a></li>
                     <li class = "menu-item"><a href="{% url 'main:contact' 		%}">Contact</a></li>
