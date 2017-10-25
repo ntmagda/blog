@@ -1,39 +1,33 @@
-<script>
-    $(window).scroll(
-    {
-        previousTop: 0
-    },
-    function () {
-    var currentTop = $(window).scrollTop();
-    if (currentTop < this.previousTop) {
-        $('#upper-menu').show();
-    } else {
-        $('#upper-menu').hide();
-    }
-    this.previousTop = currentTop;
-});
-</script>
+{%  load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static '/main/css/main_menu2.css' %}">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<div id="header">
-{#    <div id="upper-menu" class="menu">#}
-{#        <ul>#}
-{#            <li class = "upper-menu-item">#}
-{#                <a target="_blank" title="find us on Facebook" href="https://www.facebook.com/magda.nowaktrzos">#}
-{#                    <img alt="follow me on facebook" src="//login.create.net/images/icons/user/facebook_30x30.png" border=0>#}
-{#                </a>#}
-{#            </li>#}
-{#            <li class = "upper-menu-item"><a href="#">Twitter</a></li>#}
-{#        </ul>#}
-{#    </div>#}
-    <div id="main-menu" class="menu">
-                <ul>
-                    <li class = "menu-item"><a href="{% url 'main:home' 		%}">Home</a></li>
-                    <li class = "menu-item"><a href="{% url 'main:aboutus' 		%}">About us</a></li>
-                    <li class = "menu-item"><a href="{% url 'main:articles' 	%}">Articles</a></li>
-                    <li class = "menu-item"><a href="{% url 'main:contact'   	%}">Countries</a></li>
-                    <li class = "menu-item"><a href="{% url 'main:contact' 		%}">Climbing</a></li>
-                    <li class = "menu-item"><a href="{% url 'main:contact' 		%}">How to live?</a></li>
-                    <li class = "menu-item"><a href="{% url 'main:contact' 		%}">Contact</a></li>
-                </ul>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav pull-left">
+          <li class="active">
+                <a href="https://www.facebook.com/magda.nowaktrzos" target="_blank" >
+                  <img id="Image1" src="{% static 'images/social_media/facebook_icon.png' %} " style="height:35px;width:35px; background: transparent" />
+                </a>
+          </li>
+        </ul>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main_menu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
-</div>
+    <div class="collapse navbar-collapse " id="main_menu">
+      <ul class="nav navbar-nav">
+            <li><a href="{% url 'main:home' 		%}">Home</a></li>
+            <li><a href="{% url 'main:aboutus' 		%}">About us</a></li>
+            <li><a href="{% url 'main:articles' 	%}">Articles</a></li>
+            <li><a href="{% url 'main:contact'   	%}">Countries</a></li>
+            <li><a href="{% url 'main:contact' 		%}">Climbing</a></li>
+            <li><a href="{% url 'main:contact' 		%}">How to live?</a></li>
+            <li><a href="{% url 'main:contact' 		%}">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

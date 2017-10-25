@@ -18,6 +18,9 @@ li{
     margin-bottom: 10px;
 }
 
+.small-tip{
+    text-transform: none;
+}
 .headline{
     text-align: left;
     font-family: 'Noticia Text', Georgia;

@@ -20,11 +20,12 @@
 }
 .title {
     text-decoration: none;
+    padding-bottom: 10px;
     color: #000;
-    font-family: 'Noticia Text', Georgia;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 2px;
     font-weight: 500;
-  	font-size: 30px;
+  	font-size: 2vw;
 	line-height: 48px;
 	margin: 0;
     text-align: left;
@@ -97,27 +98,26 @@
 
 
 .text {
-    font-family: 'Noticia Text', Georgia;
-    line-height: 170%;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 200%;
 }
 
 .read-more{
     text-align: right;
     margin-right: 30px;
     padding-bottom: 30px;
-
 }
 
 .read-more a{
     text-decoration: none;
     color: gray;
     text-transform: uppercase;
-    font-family: myfont;
+    font-family: 'Montserrat', sans-serif;
 }
 .info {
     color: darkgray;
     text-decoration: none;
-    font-family: myfont;
+    font-family: 'Montserrat', sans-serif;
     font-size: 21px;
 }
 .info ul {
