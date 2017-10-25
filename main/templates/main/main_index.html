@@ -32,11 +32,12 @@ $(document).ready(function(){
                 </div>
        </div>
     <div class ="container bg-2 text-center" id ="section_bottom">
-			<article>
+    <div class="row">
+			<div class="col-sm-10">
 				<div class="post-item">
                     {% with object_list|first as object %}
 					<div class="title">
-                        <a href="{% url 'main:entry-detail' object.slug %}">{{ object.title|safe }}</a>
+                        <a href="{% url 'main:entry:entry-detail' object.slug %}">{{ object.title|safe }}</a>
 					</div>
 					<div class ="info">
                         <span class="date">created on {{ object.created|date:'d.m.Y'}}</span>
@@ -49,6 +50,21 @@ $(document).ready(function(){
                     </div>
                     {% endwith %}
 				</div>
-			</article>
+                <div class="title">
+                    Recent articles
+                </div>
+                <div id="recent_articles" class="row_images">
+                    {% for object in object_list|slice:"0:3" %}
+                        <div class = "image">
+                            <a href="{% url 'main:entry:entry-detail' object.slug %}">
+                                <img class = "post-image" src="{{ object.title_image.url }}"/>
+                                <p class="img_description text">{{ object.title }}</p>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+			</div>
+            <div class="col-sm-2">{% include 'entry/sidebar.html' %}</div>
+    </div>
     </div>
 {% endblock %}

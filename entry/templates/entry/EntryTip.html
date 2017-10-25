@@ -3,7 +3,7 @@
 {% block article %}
 <div class="post-item">
     <div class="title">
-        <a href="{% url 'main:entry:entry-detail' object.slug %}">{{ object.title|safe }}</a>
+        <a href="{% url 'main:entry:entry-tip' object.slug %}">{{ object.title|safe }}</a>
     </div>
     <div class ="info">
         <span class="date">created on {{ object.created|date:'d.m.Y'}}</span>
@@ -11,11 +11,11 @@
             by <a href = "{% url 'main:aboutus' %}">{{ object.author|safe }}</a>
         </span>
     </div>
+     <a href="{% url 'main:entry:entry-detail' object.property.slug %}">
+          <span class="glyphicon glyphicon-arrow-left"> BACK</span>
+     </a>
     <div id="short-body" class ="text">
         {{object.short_body}}
-    </div>
-    <div id="slideshow">
-    {% include 'main/slideshow.html' %}
     </div>
     <div id="post-body" class="text">
     {{object.body|safe}}

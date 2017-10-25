@@ -2,7 +2,6 @@
     <link rel="stylesheet" type="text/css" href="{% static '/entry/css/side_bar.css' %}">
 
 
-
 <div id="sidebar">
         <div class="tags">
             <h3 class="headline">Short tips</h3>
@@ -11,13 +10,13 @@
                     <li><a href="#">{{ tag }}</a></li>
                 {% endfor %}
                 {% for tip in object.tip.all %}
-                        <li class="small-tip"><a href="#">{{ tip.tip }}</a></li>
+                        <li class="small-tip">{{ tip.tip }}</li>
                 {% endfor %}
             </ul>
             <h3 class="headline">Categories</h3>
             <ul >
                 {% for tip_full in object.tip_full_article.all %}
-                    <li><a href="#">{{ tip_full}}</a></li>
+                    <li><a href="{% url 'main:entry:entry-tip' tip_full.slug %}">{{ tip_full}}</a></li>
                 {% endfor %}
             </ul>
         </div>

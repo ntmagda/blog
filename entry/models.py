@@ -9,8 +9,7 @@ class EntryQuerySet(models.QuerySet):
     def published(self):
         return self.filter(publish=True)
 
-
-class Entry(models.Model):
+class EntryInteface(models.Model):
     title = models.CharField(max_length=400)
     author = models.CharField(max_length=400)
     short_body = models.TextField()
@@ -22,11 +21,12 @@ class Entry(models.Model):
     title_image = models.ImageField(upload_to='images/%Y/%m/%d', null=True)
     body = RichTextUploadingField()
 
+
+class Entry(EntryInteface):
     objects = EntryQuerySet.as_manager()
 
     def __str__(self):
         return self.title
-
 
     class Meta:
         verbose_name_plural = "entries"
@@ -39,18 +39,9 @@ class EntrySmallTip(models.Model):
     property = models.ForeignKey(Entry, related_name='tip')
     tip = models.CharField(max_length=600)
 
-class EntryTipFullArticle(models.Model):
+class EntryTipFullArticle(EntryInteface):
+    objects = EntryQuerySet.as_manager()
     property = models.ForeignKey(Entry, related_name='tip_full_article')
-    title = models.CharField(max_length=400)
-    author = models.CharField(max_length=400)
-    short_body = models.TextField()
-    slug = models.SlugField(max_length=200, unique=True)
-    tags = TaggableManager()
-    publish = models.BooleanField(default=True)
-    created = models.DateTimeField(auto_now_add=True)
-    modified = models.DateTimeField(auto_now=True)
-    title_image = models.ImageField(upload_to='images/%Y/%m/%d', null=True)
-    body = RichTextUploadingField()
 
     def __str__(self):
         return self.title

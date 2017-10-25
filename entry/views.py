@@ -20,6 +20,15 @@ class EntryView(generic.DetailView):
         context = super(EntryView, self).get_context_data(**kwargs)
         return context
 
+class EntryTipFullArticleView(generic.DetailView):
+    template_name = "entry/EntryTip.html"
+    model = models.EntryTipFullArticle
+
+    def get_context_data(self, **kwargs):
+        context = super(EntryTipFullArticleView, self).get_context_data(**kwargs)
+        return context
+
+
 class EntryListView(generic.ListView):
     queryset = models.Entry.objects.published()
     template_name = "entry/EntryList.html"

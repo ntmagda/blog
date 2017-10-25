@@ -5,13 +5,14 @@
 {% load staticfiles %}
 {% block content %}
 {% include 'main/main_menu.html' %}
-    <link rel="stylesheet" type="text/css" href="{% static '/entry/css/entry_list.css' %}">
-        <div id="content">
-            <div id="list">
+        <link rel="stylesheet" type="text/css" href="{% static '/entry/css/entry_list.css' %}">
+        <div class="container">
+        <div class="row">
+            <div class = "col-sm-9" id="list">
             {% for object in object_list %}
                 <div class="post">
                     <div class="title">
-                        <a href="{% url 'main:entry-detail' object.slug %}">{{ object.title|safe }}</a>
+                        <a href="{% url 'main:entry:entry-detail' object.slug %}">{{ object.title|safe }}</a>
                     </div>
                     <div class ="info">
                         <span class="date">created on {{ object.created|date:'d.m.Y'}}</span>
@@ -20,7 +21,7 @@
                         </span>
                     </div>
                     <div class = "image">
-                        <a href="{% url 'main:entry-detail' object.slug %}" class="thumbnail">
+                        <a href="{% url 'main:entry:entry-detail' object.slug %}" class="img-thumbnai1">
                             <img class = "post-image" src="{{ object.title_image.url }}"/>
                         </a>
                     </div>
@@ -28,10 +29,13 @@
                     <div id="short-body" class ="text">
                         {{object.short_body|markdown|truncatewords:50 }}
                     </div>
-                    <div class="read-more"><a href="{% url 'main:entry-detail' object.slug %}">Read more</a></div>
+                    <div class="read-more"><a href="{% url 'main:entry:entry-detail' object.slug %}">Read more</a></div>
                 </div>
             {% endfor %}
             </div>
-            {% include 'entry/sidebar.html' %}
+            <div class="col-sm-3">
+                {% include 'entry/sidebar.html' %}
+            </div>
+        </div>
         </div>
 {% endblock %}
