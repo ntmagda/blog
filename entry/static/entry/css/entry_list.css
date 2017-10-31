@@ -48,13 +48,12 @@
 .img_description{
   position: absolute;
   padding-top: 20%;
-  top: 10%;
-  bottom: 5%;
-  left: 10%;
-  right: 10%;
-  background: rgba(0, 0, 0, 0.44);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   color: #fff;
-    font-size: 4vh;
+  font-size: 4vh;
   visibility: hidden;
   opacity: 0;
   /* transition effect. not necessary */
@@ -97,11 +96,16 @@
 
 .post-image {
     object-fit: contain;
-    height: 90%;
-    width: 90%;
+    height: 95%;
+    width: 95%;
     padding-top: 20px;
+    margin-bottom: 20px;
 }
 
+.img_description{
+    height: 95%;
+    width: 95%;
+}
 
 .text {
     font-family: 'Montserrat', sans-serif;

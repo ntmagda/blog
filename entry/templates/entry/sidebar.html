@@ -7,7 +7,7 @@
             <h3 class="headline">Short tips</h3>
             <ul>
                 {% for tag in tag_list %}
-                    <li><a href="#">{{ tag }}</a></li>
+                    <li><a href="{% url 'main:entry:articles' %}">{{ tag }}</a></li>
                 {% endfor %}
                 {% for tip in object.tip.all %}
                         <li class="small-tip">{{ tip.tip }}</li>

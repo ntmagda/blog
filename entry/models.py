@@ -21,6 +21,9 @@ class EntryInteface(models.Model):
     title_image = models.ImageField(upload_to='images/%Y/%m/%d', null=True)
     body = RichTextUploadingField()
 
+    class Meta:
+        ordering = ['-created', ]
+
 
 class Entry(EntryInteface):
     objects = EntryQuerySet.as_manager()

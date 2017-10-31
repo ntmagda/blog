@@ -1,0 +1,18 @@
+{% extends 'main/multi_slider.html' %}
+{% load staticfiles %}
+{% block images_to_slide %}
+    {% for object in object_list %}
+        <li>
+            <h3>
+            <div class = "image">
+                <a href="{% url 'main:entry:entry-detail' object.slug %}">
+                    <img class = "post-image" src="{{ object.title_image.url }}"/>
+                    <p class="img_description text">{{ object.title }}</p>
+                </a>
+            </div>
+            </h3>
+        </li>
+    {% endfor %}
+
+{% endblock %}
+
