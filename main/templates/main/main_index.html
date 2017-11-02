@@ -2,11 +2,11 @@
 {% load django_markdown %}
 {% load staticfiles %}
 {% block content %}
-    <link rel="stylesheet" type="text/css" href="{% static '/main/css/main_sections2.css' %}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="{% static '/main/css/main_sections2.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <link rel="stylesheet" type="text/css" href="{% static '/entry/css/entry_list.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static '/entry/css/entry_list.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 <script>
 $(document).ready(function(){
   $(".know_more").on('click', function(event) {
@@ -22,7 +22,8 @@ $(document).ready(function(){
   });
 });
 </script>
-    {% include 'main/main_menu.html'%}
+
+{% include 'main/main_menu.html'%}
        <div class="container-fluid bg-1 text-center">
             <div class="row" id="section_top_content" style="width: 25%">
                 <div class="col-sm-12"><span id="P-G">Polish - German <br>climbing team in<br> </span> <h1>India </h1></div>

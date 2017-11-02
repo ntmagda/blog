@@ -8,18 +8,18 @@
 			<div class = "col-sm-9">
             {% block article %}
             {% endblock %}
+            {% if object.tags.similar_objects|length > 2  %}
+            <div class="title">
+                Related
+            </div>
+            {% include "main/multi_slider.html" with object_list=object.tags.similar_objects|slice:"0:3" %}
+            {% endif %}
 			</div>
             <div class="col-sm-3">
                 {% include 'entry/sidebar.html' %}
             </div>
         </div>
     </div>
-    {% if object.tags.similar_objects|length > 2  %}
-    <div class="title">
-        Related
-    </div>
-    {% include 'entry/EntrySimilarPosts.html' %}
-    {% endif %}
 {% endblock %}
 
 

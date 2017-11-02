@@ -1,6 +1,14 @@
 <!DOCTYPE html>
-
 {% extends 'main/base.html' %}
+<style>
+.row{
+    overflow: hidden;
+}
+[class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+</style>
 {% load django_markdown %}
 {% load staticfiles %}
 {% block content %}

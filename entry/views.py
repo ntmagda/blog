@@ -5,6 +5,8 @@ from django.views import generic
 from . import models
 from taggit.models import Tag
 from django.views.generic.base import ContextMixin
+from django.shortcuts import render_to_response, get_object_or_404
+from django.template import RequestContext
 
 class BaseContextMixin(ContextMixin):
 
@@ -30,9 +32,14 @@ class EntryTipFullArticleView(generic.DetailView):
 
 
 class EntryListView(generic.ListView):
-    queryset = models.Entry.objects.published()
     template_name = "entry/EntryList.html"
 
+    def get_queryset(self):
+        if len(self.kwargs)> 0:
+            queryset = models.Entry.objects.published().filter(tags__name__in=[self.kwargs['slug']])
+        else:
+            queryset = models.Entry.objects.published()
+        return queryset
 
     def get_context_data(self, **kwargs):
         context = super(EntryListView, self).get_context_data(**kwargs)

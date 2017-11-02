@@ -6,6 +6,7 @@ app_name = 'entry'
 
 urlpatterns = [
     url(r'^$', EntryView.EntryListView.as_view(), name='articles'),
+    url(r'^tag/(?P<slug>[-\w]+)/$', EntryView.EntryListView.as_view(), name='articles-tag'),
     url(r'^(?P<slug>[-\w]+)/$', EntryView.EntryView.as_view(), name='entry-detail'),
     url(r'^tips/(?P<slug>[-\w]+)/', EntryView.EntryTipFullArticleView.as_view(), name='entry-tip'),
 

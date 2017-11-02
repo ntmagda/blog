@@ -1,17 +1,10 @@
 
 #sidebar{
-    flex-basis: 40%;
-    padding-top: 50px;
-    padding-left: 30px;
-    border-left: solid;
-    border-color: #c7c7c7;
-    border-width: 1px;
-    height: 100vh;
+    padding-top: 30px;
 }
 
 ul{
    list-style-type: none;
-
 }
 
 li{

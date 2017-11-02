@@ -1,12 +1,36 @@
-
 {% extends 'main/base.html' %}
 {% block content %}
+{% load staticfiles %}
     {% include 'main/main_menu.html'%}
-    <div id="main">
-        <div id="content">
-            <h1>Contact</h1>
+    {% for object in object_list.all %}
+    <link rel="stylesheet" type="text/css" href="{% static '/entry/css/entry_list.css' %}">
+        <div class="container">
+        <div class="row">
+			<div class = "col-sm-12">
+                <div class="post-item">
+                    <div class="title">
+                        {{ object.title|safe }}
+                    </div>
+                    <div class = "row">
+                        <div class ="col-sm-6">
+                            <span class="img-thumbnai1">
+                                <img class = "post-image" src="{{ object.leon_image.url }}"/>
+                            </span>
+                        </div>
+                        <div class ="col-sm-6">
+                            <span class="img-thumbnai1">
+                                <img class = "post-image" src="{{ object.magda_image.url }}"/>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="post-body" class="text">
+                    {{object.body|safe}}
+                    </div>
+                </div>
+			</div>
         </div>
-        {% include 'main/../../../entry/templates/entry/sidebar.html' %}
     </div>
+    {% endfor %}
 {% endblock %}
+
 

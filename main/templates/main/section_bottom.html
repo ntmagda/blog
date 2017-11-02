@@ -1,9 +1,15 @@
-<div class="row">
+
+<div class="row" >
     <div class="col-sm-9">
         <div class="post-item">
             {% with object_list|first as object %}
             <div class="title">
                 <a href="{% url 'main:entry:entry-detail' object.slug %}">{{ object.title|safe }}</a>
+            </div>
+            <div class = "image">
+            <a href="{% url 'main:entry:entry-detail' object.slug %}" class="img-thumbnai1">
+                <img class = "post-image" src="{{ object.title_image.url }}"/>
+            </a>
             </div>
             <div class ="info">
                 <span class="date">created on {{ object.created|date:'d.m.Y'}}</span>
@@ -26,8 +32,8 @@
             Recent articles
         </div>
         <div id="recent_articles" class="row_images">
-            {% include 'main/recent_posts.html' %}
+            {% include "main/multi_slider.html" with object_list=object_list|slice:"1:" %}
         </div>
     </div>
-    <div class="col-sm-3">{% include 'entry/sidebar.html' %}</div>
+    <div class="col-sm-3" >{% include 'entry/sidebar.html' %}</div>
 </div>
