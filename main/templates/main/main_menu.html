@@ -6,9 +6,14 @@
   <div class="container-fluid">
     <div class="navbar-header">
         <ul class="nav navbar-nav pull-left">
-          <li class="active">
-                <a href="https://www.facebook.com/magda.nowaktrzos" target="_blank" >
-                  <img id="Image1" src="{% static 'images/social_media/facebook_icon.png' %} " style="height:35px;width:35px; background: transparent" />
+          <li class="active social">
+                <a href="https://www.facebook.com/magda.nowaktrzos" style=" height:5vh;width:5vh; background-color: transparent;">
+                  <img id="Image1" src="{% static 'images/social_media/facebook_icon.png' %} " style="height:5vh;width:5vh;" />
+                </a>
+          </li>
+          <li class ="active social">
+                <a href="https://www.instagram.com/ntmagda/" style=" height:5vh;width:5vh; background-color: transparent;">
+                  <img id="Image2" src="{% static 'images/social_media/instagram_icon.png' %} " style="height:5vh;width:5vh;" />
                 </a>
           </li>
         </ul>
@@ -20,13 +25,12 @@
     </div>
     <div class="collapse navbar-collapse " id="main_menu">
       <ul class="nav navbar-nav">
-            <li><a href="{% url 'main:home' 		%}">Home</a></li>
-            <li><a href="{% url 'main:aboutus' 		%}">About us</a></li>
+            <li><a href="{% url 'main:home' 		    %}">Home</a></li>
+            <li><a href="{% url 'main:aboutus' 		    %}">About us</a></li>
             <li><a href="{% url 'main:entry:articles' 	%}">Articles</a></li>
-            <li><a href="{% url 'main:contact'   	%}">Countries</a></li>
-            <li><a href="{% url 'main:contact' 		%}">Climbing</a></li>
-            <li><a href="{% url 'main:contact' 		%}">How to live?</a></li>
-            <li><a href="{% url 'main:contact' 		%}">Contact</a></li>
+            <li><a href="{% url 'main:countries'   	    %}">Countries</a></li>
+            <li><a href="{% url 'main:climbing' 		%}">Climbing</a></li>
+            <li><a href="{% url 'main:contact' 	    	%}">How to live?</a></li>
       </ul>
     </div>
   </div>

@@ -12,9 +12,12 @@
     padding-top: 23px;
     color: white;
     font-family: 'Montserrat', sans-serif;
-    font-size: 23px;
+    font-size: 18px;
 }
 
 #main_menu li{
     margin: 0 10px;
+}
+.social {
+    padding-right: 10px;
 }

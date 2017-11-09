@@ -1,19 +1,18 @@
 {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static '/entry/css/side_bar.css' %}">
 
-
 <div id="sidebar">
         <div class="tags">
-            <h3 class="headline">Short tips</h3>
+            <h3 class="headline">Short tips about {{ object.title }}</h3>
             <ul>
                 {% for tag in tag_list %}
-                    <li><a href="{% url "main:entry:articles-tag" tag %}">{{ tag }}</a></li>
+                    <li><a href="{% url "main:entry:articles-tag" slug_tag=tag %}">{{ tag }}</a></li>
                 {% endfor %}
                 {% for tip in object.tip.all %}
                         <li class="small-tip">{{ tip.tip }}</li>
                 {% endfor %}
             </ul>
-            <h3 class="headline">Categories</h3>
+            <h3 class="headline">Might be useful to know</h3>
             <ul >
                 {% for tip_full in object.tip_full_article.all %}
                     <li><a href="{% url 'main:entry:entry-tip' tip_full.slug %}">{{ tip_full}}</a></li>
@@ -21,4 +20,3 @@
             </ul>
         </div>
     </div>
-

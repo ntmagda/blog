@@ -1,7 +1,12 @@
 from django.contrib import admin
 from django.contrib import admin
 
-from .models import Entry, EntryImage, EntryTipFullArticle, EntrySmallTip, AboutUsImage, AboutUs
+from .models import Entry, EntryImage, EntryTipFullArticle, EntrySmallTip, AboutUsImage, AboutUs, Country
+
+class CountryAdmin(admin.ModelAdmin):
+    model = Country
+    list_display = ['name']
+
 
 
 class EntryImageInline(admin.TabularInline):
@@ -45,3 +50,4 @@ class AboutUsAdmin(admin.ModelAdmin):
 admin.site.register(EntryTipFullArticle, EntryTipFullArticleAdmin)
 admin.site.register(Entry, EntryAdmin)
 admin.site.register(AboutUs, AboutUsAdmin)
+admin.site.register(Country, CountryAdmin)

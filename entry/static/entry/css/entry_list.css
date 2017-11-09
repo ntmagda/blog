@@ -116,3 +116,12 @@
 .author a:hover {
     text-decoration: none;
 }
+
+.pag{
+    text-align: right;
+}
+
+.pagination li a{
+    color: #222222;
+    text-decoration: none;
+}

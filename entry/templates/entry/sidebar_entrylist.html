@@ -1,0 +1,13 @@
+{% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static '/entry/css/side_bar.css' %}">
+
+<div id="sidebar">
+        <div class="tags">
+            <h3 class="headline">Filter by tags</h3>
+            <ul>
+                {% for tag in tag_list %}
+                    <li><a href="{% url "main:entry:articles-tag" slug_tag=tag %}">{{ tag }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>

@@ -20,4 +20,8 @@ class ContactView(generic.TemplateView):
     template_name = "main/contact.html"
 
 
+class CountriesView(generic.ListView):
+    template_name = "main/grid.html"
+    queryset = models.Country.objects.all()
+
 

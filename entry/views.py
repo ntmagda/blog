@@ -33,12 +33,15 @@ class EntryTipFullArticleView(generic.DetailView):
 
 class EntryListView(generic.ListView):
     template_name = "entry/EntryList.html"
+    paginate_by = 5
 
     def get_queryset(self):
-        if len(self.kwargs)> 0:
-            queryset = models.Entry.objects.published().filter(tags__name__in=[self.kwargs['slug']])
-        else:
-            queryset = models.Entry.objects.published()
+        queryset = models.Entry.objects.published()
+        if len(self.kwargs) > 0:
+            if 'slug_country' in self.kwargs:
+                queryset = queryset.filter(country__slug=self.kwargs['slug_country'])
+            if 'slug_tag' in self.kwargs:
+                queryset = queryset.filter(tags__name__in=[self.kwargs['slug_tag']])
         return queryset
 
     def get_context_data(self, **kwargs):
@@ -46,3 +49,9 @@ class EntryListView(generic.ListView):
         tags = Tag.objects.all()
         context['tag_list'] = tags
         return context
+
+class ClimbingView(generic.ListView):
+    template_name = "entry/EntryList.html"
+    paginate_by = 5
+
+    queryset = models.Entry.objects.published().filter(isClimbing=True)

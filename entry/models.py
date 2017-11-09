@@ -4,6 +4,18 @@ from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
 from taggit.managers import TaggableManager
 
+class Country(models.Model):
+    name = models.CharField(max_length=300)
+    image = models.ImageField(upload_to='countries/', null=True)
+    slug = models.SlugField(max_length=200, unique=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = "Countries"
+
+
 
 class EntryQuerySet(models.QuerySet):
     def published(self):
@@ -12,6 +24,7 @@ class EntryQuerySet(models.QuerySet):
 class EntryInteface(models.Model):
     title = models.CharField(max_length=400)
     author = models.CharField(max_length=400)
+    isClimbing = models.BooleanField(default=False)
     short_body = models.TextField()
     slug = models.SlugField(max_length=200, unique=True)
     tags = TaggableManager()
@@ -20,6 +33,7 @@ class EntryInteface(models.Model):
     modified = models.DateTimeField(auto_now=True)
     title_image = models.ImageField(upload_to='images/%Y/%m/%d', null=True)
     body = RichTextUploadingField()
+    country = models.ForeignKey(Country, related_name="country", null=True)
 
     class Meta:
         ordering = ['-created', ]
@@ -65,3 +79,6 @@ class AboutUs(models.Model):
 class AboutUsImage(models.Model):
     property = models.ForeignKey(AboutUs, related_name='abus_images')
     image = models.ImageField(upload_to='aboutus/authors', null=True)
+
+
+

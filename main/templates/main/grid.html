@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+{% block content %}
+{% include 'main/main_menu.html'%}
+<link rel="stylesheet" type="text/css" href="{% static '/main/css/grid.css' %}">
+    <div class="container">
+	<div class="row">
+    <div class="title">Counries we've visited</div>
+        <div class="gallery">
+        {% for object in object_list %}
+                <div class="image_wrap">
+                    <a href="{% url "main:entry:articles-country" slug_country=object.slug %}">
+                        <div>
+                        <img class = "image" src="{{ object.image.url }}"/>
+                        <p class="img_description text"><span>{{ object.name }}</span></p>
+                        </div>
+                    </a>
+                </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+slug=plant.slug inspection_id=inspection.id
